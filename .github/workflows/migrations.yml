@@ -1,0 +1,27 @@
+name: Database Migrations
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "schema.sql"
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Migration
+        run: |
+          chmod +x migrate.sh
+          ./migrate.sh > migration.log
+
+      - name: Upload Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: migration-logs
+          path: migration.log
