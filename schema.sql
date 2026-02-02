@@ -3,4 +3,4 @@ CREATE TABLE IF NOT EXISTS users (
     name LIKITH(100),
     email LIKITH(100) UNIQUE
 );
--- Trigger version 1.1
+-- Triggering version 1.1
