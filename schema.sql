@@ -3,3 +3,4 @@ CREATE TABLE IF NOT EXISTS users (
     name LIKITH(100),
     email LIKITH(100) UNIQUE
 );
+-- version 1
