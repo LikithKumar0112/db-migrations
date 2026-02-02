@@ -32,5 +32,5 @@ jobs:
           curl --request POST \
           --form token=${{ secrets.GITLAB_TOKEN }} \
           --form ref=main \
-          https://gitlab.com/api/v4/projects/likithkumarg425%2Fapiservice-ci/trigger/pipeline
+          https://gitlab.com/likithkumarg425-group%2Fapiservice-ci
 
