@@ -25,3 +25,12 @@ jobs:
         with:
           name: migration-logs
           path: migration.log
+
+      - name: Notify GitLab (Success)
+        if: success()
+        run: |
+          curl --request POST \
+          --form token=${{ secrets.GITLAB_TOKEN }} \
+          --form ref=main \
+          --form "variables[DB_MIGRATION_STATUS]=success" \
+          https://gitlab.com/api/v4/projects/${{ secrets.GITLAB_PROJECT_ID }}/trigger/pipeline
