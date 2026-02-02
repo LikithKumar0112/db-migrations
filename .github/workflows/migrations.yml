@@ -32,6 +32,5 @@ jobs:
           curl --request POST \
           --form token=${{ secrets.GITLAB_TOKEN }} \
           --form ref=main \
-          --form "variables[DB_MIGRATION_STATUS]=success" \
           https://gitlab.com/api/v4/projects/likithkumarg425%2Fapiservice-ci/trigger/pipeline
 
